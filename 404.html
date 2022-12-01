@@ -1,1 +1,76 @@
-<meta http-equiv=refresh content="0;url=https://tiggrak.gitee.io">
+
+
+
+<!DOCTYPE html>
+<html lang="zh" oncontextmenu="return false;" οndblclick="return false;" onselectstart="return false">
+<meta http-equiv=refresh content="3;url=https://tiggrak.gitee.io">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>404</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <link rel="stylesheet" href="css/404.css">
+    <link href="./img/TigGraklogo.png" rel="shortcut icon"/>
+    <script type="text/javascript">
+        function dark(){
+    $(".text").css("color","gray")
+    $("#box").css("background-color","rgba(0,0,0,.4)")
+    $("#toppic").css("filter","brightness(90%)")
+
+}
+
+function light(){
+    $(".text").css("color", "rgb(10,10,10)")
+    $("#toppic").css("filter","brightness(100%)")
+    $("#box").css("background-color","rgba(150,150,150,.4)")
+  }
+
+
+$(function() {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        dark()
+      }
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    dark()
+  } else {
+    light()
+
+}
+})
+})
+
+    </script>
+</head>
+<body>
+    <iframe id="if" src="loading.html" style="width: 100vw; height: 100vh; z-index: 99999; display: block;position:absolute;" scrolling="no" frameborder="0">Loading...</iframe>
+
+    <div id="toppic"></div>
+
+    <div id="box">
+        <h1>404 NOT FOUND</h1>
+        <h2>页面丢失了</h2>
+        <h3 class="text">将自动返回首页</h3>
+    </div>
+
+    <script type="text/javascript">
+
+        function sleep (time) {
+              return new Promise((resolve) => setTimeout(resolve, time));
+            }
+            window.onload = function(){
+                
+                
+                sleep(1250).then(() => {
+                    console.log(1)
+                    $("#if").fadeOut(500);
+                })
+        
+                
+        
+        }
+        </script>
+</body>
+
